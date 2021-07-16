@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--
+	Paradigm Shift by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>All My Friends</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="static/assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Intro -->
+      <section class="intro">
+        <header>
+          <h1>Friends</h1>
+          <p>Are friends forever</p>
+          <ul class="actions">
+            <li>
+              <a href="#first" class="arrow scrolly"
+                ><span class="label">Next</span></a
+              >
+            </li>
+          </ul>
+        </header>
+        <div class="content">
+          <span class="image fill" data-position="center"
+            ><img src="static/images/pic01.jpg" alt=""
+          /></span>
+        </div>
+      </section>
+
+      <!-- Section -->
+      <section>
+        <header>
+          <h2>All My Friends</h2>
+        </header>
+        <div class="content">
+          <p><strong>All My Friends</strong> I have so many friends.</p>
+          <ul class="feature-icons">
+            {% for friend in friends %}
+            <li class="icon solid fa-user-friends">
+              {{friend.first_name}} (Job: {{friend.occupation}})--<a
+                href="/friends/{{friend.id}}/delete"
+                >x</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section -->
+      <section>
+        <header>
+          <h2>Get in touch</h2>
+        </header>
+        <div class="content">
+          <p>
+            <strong>Say Hi</strong> interdum et malesuada fames ac ante ipsum
+            primis in faucibus. Pellentesque venenatis dolor imperdiet dolor
+            mattis sagittis.
+          </p>
+          <form action="/friends/create" method="POST">
+            <div class="fields">
+              <div class="field half">
+                <input
+                  type="text"
+                  name="first_name"
+                  id="name"
+                  placeholder="First Name"
+                />
+              </div>
+              <div class="field half">
+                <input
+                  type="text"
+                  name="occupation"
+                  id="email"
+                  placeholder="Occupation"
+                />
+              </div>
+            </div>
+            <ul class="actions">
+              <li>
+                <input type="submit" value="Say Hi" class="button primary" />
+              </li>
+            </ul>
+          </form>
+        </div>
+        <footer>
+          <ul class="items">
+            <li>
+              <h3>Elsewhere</h3>
+              <ul class="icons">
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/luke-maclean/"
+                    class="icon brands fa-linkedin-in"
+                    ><span class="label">LinkedIn</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/MacLeanLuke"
+                    class="icon brands fa-github"
+                    ><span class="label">GitHub</span></a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </footer>
+      </section>
+
+      <!-- Copyright -->
+      <div class="copyright">
+        &copy; Untitled. All rights reserved. Design:
+        <a href="https://html5up.net">HTML5 UP</a>.
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="static/assets/js/jquery.min.js"></script>
+    <script src="static/assets/js/jquery.scrolly.min.js"></script>
+    <script src="static/assets/js/browser.min.js"></script>
+    <script src="static/assets/js/breakpoints.min.js"></script>
+    <script src="static/assets/js/util.js"></script>
+    <script src="static/assets/js/main.js"></script>
+  </body>
+</html>
